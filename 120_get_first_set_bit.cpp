@@ -1,15 +1,6 @@
-// https://practice.geeksforgeeks.org/problems/maximum-sum-increasing-subsequence/0/
+// https://practice.geeksforgeeks.org/problems/find-first-set-bit/0
 #include <bits/stdc++.h>
 using namespace std;
-
-void print_vector(std::vector<int> v)
-{
-	for (int i = 0; i < v.size(); ++i)
-	{
-		cout << v[i] << " ";
-	}
-	cout << endl;
-}
 
 int main()
 {
@@ -27,8 +18,23 @@ int main()
 	{
 		int n;
 		cin >> n;
-		vector<int> arr(n);
+		int m = 1, i = 1;
+		int digit = 0;
 
+		while (n >= m)
+		{
+			if (n & m)
+			{
+				digit = i;
+				break;
+			}
+
+			// left shift by 1 digit
+			m *= 2;
+
+			i++;
+		}
+		cout << digit << endl;
 	}
 	return 0;
 }

@@ -1,4 +1,4 @@
-// https://practice.geeksforgeeks.org/problems/maximum-sum-increasing-subsequence/0/
+// https://practice.geeksforgeeks.org/problems/find-first-set-bit/0
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -27,8 +27,20 @@ int main()
 	{
 		int n;
 		cin >> n;
-		vector<int> arr(n);
+		std::vector<int> v;
+		while (n > 0)
+		{
+			int bit = n % 2;
+			v.push_back(bit);
+			n = n / 2;
+		}
 
+
+		for (auto it = v.rbegin(); it != v.rend() ; ++it)
+		{
+			cout << *it;
+		}
+		cout << endl;
 	}
 	return 0;
 }

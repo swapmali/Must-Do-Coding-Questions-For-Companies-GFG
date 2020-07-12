@@ -1,15 +1,6 @@
-// https://practice.geeksforgeeks.org/problems/maximum-sum-increasing-subsequence/0/
+// https://practice.geeksforgeeks.org/problems/check-whether-k-th-bit-is-set-or-not/0
 #include <bits/stdc++.h>
 using namespace std;
-
-void print_vector(std::vector<int> v)
-{
-	for (int i = 0; i < v.size(); ++i)
-	{
-		cout << v[i] << " ";
-	}
-	cout << endl;
-}
 
 int main()
 {
@@ -25,10 +16,15 @@ int main()
 	cin >> t;
 	while (t--)
 	{
-		int n;
-		cin >> n;
-		vector<int> arr(n);
+		int n, k;
+		cin >> n >> k;
+		int m = 1 * pow(2, k);
+		int digit = 0;
 
+		if (n & m)
+			cout << "Yes" << endl;
+		else
+			cout << "No" << endl;
 	}
 	return 0;
 }
